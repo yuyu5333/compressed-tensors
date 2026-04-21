@@ -6,7 +6,7 @@ import torch.distributed as dist
 from compressed_tensors.offload.cache.cpu import CPUCache
 from compressed_tensors.offload.utils import send_tensors, to_empty
 
-_BATCH_SIZE = 64
+_BATCH_SIZE = 256
 
 
 class DistributedCPUCache(CPUCache):
