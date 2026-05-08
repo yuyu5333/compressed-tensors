@@ -74,6 +74,8 @@ def _get_quant_compression_format(
         ):
             return CompressionFormat.float_quantized
         if weight_args.type == QuantizationType.INT.value:
+            if weight_args.num_bits == 4:
+                return CompressionFormat.pack_quantized
             return CompressionFormat.int_quantized
 
         return CompressionFormat.naive_quantized
